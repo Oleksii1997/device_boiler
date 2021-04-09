@@ -1,0 +1,32 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="{% static 'homepage_style.css'%}">
+    <meta name="viewport" content="width=device-width">
+</head>
+<body>
+<script src="https://code.jquery.com/jquery-3.3.1.js"></script>
+<script src="{% static 'script/script_dev_upd.js' %}"></script>
+
+<div class="title">
+    <h1> Останні покази прилада </h1>
+</div>
+<div class="subtitle">
+    <h2> Вивід останніх 5 записів з таблиці devicedata для приладу sn=”BRANDON_SN_US” </h2>
+</div>
+
+<div class="list_device_data">
+    <ul>
+        <li>
+            Завантаження даних ...
+        </li>
+    </ul>
+</div>
+
+<form class="get_last_data_form" action="{% url 'get_last_data' %}">{% csrf_token %}</form><!--for ajax url-->
+
+</body>
+</html>
